@@ -1,22 +1,223 @@
-<HTML>
-  <HEAD>
-    <Title>Miriam's Stain Glass Projects</Title>
-  </HEAD>
-  <BODY>
-    Pictures go here ...
-    <TABLE>
-      <TR>
-        <TD>The Duck of Doom</TD>
-        <TD> Duck Picture goes here</TD>
-      </TR>
-      <TR>
-        <TD>Ninja Squirell</TD>
-        <TD><IMG src="Squirell.jpg" height="200px"></TD>
-      </TR>
-      <TR>
-        <TD>Beating Sweet Heart</TD>
-        <TD>Heart picture here</TD>
-      </TR>      
-    </TABLE>
-  </BODY>
-</HTML>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Miriam's Stained Glass Projects</title>
+
+    <style>
+      :root{
+        --bg: #fbfaf8;
+        --card: #ffffff;
+        --muted: #6b6b6b;
+        --accent: #b04e61; /* warm stained glass tone */
+        --shadow: 0 6px 18px rgba(16,16,16,0.08);
+        --radius: 10px;
+        --max-width: 1000px;
+      }
+
+      *{box-sizing:border-box;}
+      body{
+        margin:0;
+        font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+        background: linear-gradient(180deg, #fffefc 0%, #fbf7f9 100%);
+        color:#222;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        padding:2.25rem 1rem;
+        display:flex;
+        justify-content:center;
+      }
+
+      .site {
+        width:100%;
+        max-width:var(--max-width);
+      }
+
+      header.site-header{
+        display:flex;
+        align-items:center;
+        gap:1rem;
+        margin-bottom:1.25rem;
+      }
+
+      .logo {
+        width:72px;
+        height:72px;
+        border-radius:12px;
+        background:linear-gradient(135deg, #f6d1d9 0%, #fef1ea 50%);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:700;
+        color:var(--accent);
+        box-shadow:var(--shadow);
+        flex:0 0 72px;
+      }
+
+      h1{
+        font-size:1.5rem;
+        margin:0;
+        line-height:1.05;
+      }
+
+      p.lead{
+        margin:0.35rem 0 0;
+        color:var(--muted);
+        font-size:0.95rem;
+      }
+
+      .gallery {
+        margin-top:1.25rem;
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+        gap:1rem;
+      }
+
+      .card{
+        background:var(--card);
+        border-radius:var(--radius);
+        padding:0.5rem;
+        box-shadow:var(--shadow);
+        display:flex;
+        flex-direction:column;
+        overflow:hidden;
+        transition:transform .18s ease, box-shadow .18s ease;
+      }
+
+      .card:hover{
+        transform:translateY(-6px);
+        box-shadow:0 18px 36px rgba(16,16,16,0.12);
+      }
+
+      figure{
+        margin:0;
+        position:relative;
+        overflow:hidden;
+        border-radius:8px;
+        background:linear-gradient(180deg,#f6f0ef,#fff);
+      }
+
+      img.project-image{
+        display:block;
+        width:100%;
+        height:200px;
+        object-fit:cover;
+      }
+
+      figcaption{
+        padding:0.65rem 0.5rem;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:0.5rem;
+      }
+
+      .title{
+        font-weight:600;
+      }
+
+      .subtitle{
+        color:var(--muted);
+        font-size:0.9rem;
+      }
+
+      .placeholder {
+        height:200px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        color:var(--muted);
+        font-size:0.95rem;
+        background:repeating-linear-gradient(45deg,#fff 0,#fff 12px,#f7f4f4 12px,#f7f4f4 24px);
+      }
+
+      footer{
+        margin-top:1.75rem;
+        color:var(--muted);
+        font-size:0.9rem;
+        text-align:center;
+      }
+
+      @media (max-width:420px){
+        .logo{width:56px;height:56px;font-size:0.95rem;}
+        h1{font-size:1.25rem;}
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site" role="main">
+      <header class="site-header" aria-label="Site header">
+        <div class="logo" aria-hidden="true">MG</div>
+        <div>
+          <h1>Miriam's Stained Glass Projects</h1>
+          <p class="lead">A small gallery of finished pieces and works in progress.</p>
+        </div>
+      </header>
+
+      <section class="gallery" aria-label="Projects gallery">
+        <article class="card" aria-labelledby="duck-title">
+          <figure>
+            <!-- Replace DuckOfDoom.jpg with your actual image file -->
+            <img class="project-image" src="DuckOfDoom.jpg" alt="Stained glass: The Duck of Doom" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="placeholder" style="display:none">Duck picture not found — upload DuckOfDoom.jpg</div>
+          </figure>
+          <figcaption>
+            <div>
+              <div id="duck-title" class="title">The Duck of Doom</div>
+              <div class="subtitle">A playful piece with bold colors.</div>
+            </div>
+            <div class="meta">200×300 mm</div>
+          </figcaption>
+        </article>
+
+        <article class="card" aria-labelledby="squirrel-title">
+          <figure>
+            <img class="project-image" src="Squirell.jpg" alt="Stained glass: Ninja Squirrel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="placeholder" style="display:none">Squirrel picture not found — upload Squirell.jpg</div>
+          </figure>
+          <figcaption>
+            <div>
+              <div id="squirrel-title" class="title">Ninja Squirrel</div>
+              <div class="subtitle">A cheeky commission piece.</div>
+            </div>
+            <div class="meta">height: 200px</div>
+          </figcaption>
+        </article>
+
+        <article class="card" aria-labelledby="heart-title">
+          <figure>
+            <img class="project-image" src="BeatingSweetHeart.jpg" alt="Stained glass: Beating Sweet Heart" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="placeholder" style="display:none">Heart picture not found — upload BeatingSweetHeart.jpg</div>
+          </figure>
+          <figcaption>
+            <div>
+              <div id="heart-title" class="title">Beating Sweet Heart</div>
+              <div class="subtitle">Warm tones with a luminous center.</div>
+            </div>
+            <div class="meta">Custom</div>
+          </figcaption>
+        </article>
+
+      </section>
+
+      <footer>
+        <p>Want changes? I can add captions, details (materials, date), or a contact/portfolio page.</p>
+      </footer>
+    </div>
+
+    <!-- Small inline script to ensure placeholders show if images fail to load on older browsers -->
+    <script>
+      // If images were hidden because onerror didn't fire, ensure placeholder visibility.
+      document.querySelectorAll('.card figure').forEach(function(fig){
+        var img = fig.querySelector('img.project-image');
+        var placeholder = fig.querySelector('.placeholder');
+        if(img && img.complete && img.naturalWidth === 0){
+          img.style.display = 'none';
+          if(placeholder) placeholder.style.display = 'flex';
+        }
+      });
+    </script>
+  </body>
+</html>
