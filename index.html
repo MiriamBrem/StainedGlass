@@ -132,6 +132,22 @@
         background:repeating-linear-gradient(45deg,#fff 0,#fff 12px,#f7f4f4 12px,#f7f4f4 24px);
       }
 
+      /* Make the entire card a link */
+      .card-link{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0.5rem;
+        color:inherit;
+        text-decoration:none;
+      }
+
+      .card-link:focus-visible{
+        outline:3px solid rgba(176,78,97,0.18);
+        outline-offset:3px;
+        border-radius:6px;
+      }
+
       footer{
         margin-top:1.75rem;
         color:var(--muted);
@@ -158,43 +174,49 @@
 
       <section class="gallery" aria-label="Projects gallery">
         <article class="card" aria-labelledby="duck-title">
-          <figure>
-            <!-- Replace DuckOfDoom.jpg with your actual image file -->
-            <img class="project-image" src="RubberDuck.jpg" alt="Stained glass: Rubber Duck" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <div class="placeholder" style="display:none">Duck picture not found — upload RubberDuck.jpg</div>
-          </figure>
-          <figcaption>
-            <div>
-              <div id="duck-title" class="title">Rubber Duck</div>
-              <div class="subtitle">A playful piece with bold colors.</div>
-            </div>
-          </figcaption>
+          <a class="card-link" href="RubberDuck.html" aria-labelledby="duck-title">
+            <figure>
+              <!-- Replace DuckOfDoom.jpg with your actual image file -->
+              <img class="project-image" src="RubberDuck.jpg" alt="Stained glass: Rubber Duck" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder" style="display:none">Duck picture not found — upload RubberDuck.jpg</div>
+            </figure>
+            <figcaption>
+              <div>
+                <div id="duck-title" class="title">Rubber Duck</div>
+                <div class="subtitle">A playful piece with bold colors.</div>
+              </div>
+            </figcaption>
+          </a>
         </article>
 
         <article class="card" aria-labelledby="squirrel-title">
-          <figure>
-            <img class="project-image" src="Squirell.jpg" alt="Stained glass: Ninja Squirrel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <div class="placeholder" style="display:none">Squirrel picture not found — upload Squirell.jpg</div>
-          </figure>
-          <figcaption>
-            <div>
-              <div id="squirrel-title" class="title">Ninja Squirrel</div>
-              <div class="subtitle">A cheeky commission piece.</div>
-            </div>
-          </figcaption>
+          <a class="card-link" href="Squirell.html" aria-labelledby="squirrel-title">
+            <figure>
+              <img class="project-image" src="Squirell.jpg" alt="Stained glass: Ninja Squirrel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder" style="display:none">Squirrel picture not found — upload Squirell.jpg</div>
+            </figure>
+            <figcaption>
+              <div>
+                <div id="squirrel-title" class="title">Ninja Squirrel</div>
+                <div class="subtitle">A cheeky commission piece.</div>
+              </div>
+            </figcaption>
+          </a>
         </article>
 
         <article class="card" aria-labelledby="heart-title">
-          <figure>
-            <img class="project-image" src="BeatingHeart.jpg" alt="Stained glass: Beating Heart" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <div class="placeholder" style="display:none">Heart picture not found — upload BeatingHeart.jpg</div>
-          </figure>
-          <figcaption>
-            <div>
-              <div id="heart-title" class="title">Beating Heart</div>
-              <div class="subtitle">This piece was created as a gift.  It utilizes clear and colored glass with opalescent tones. </div>
-            </div>
-          </figcaption>
+          <a class="card-link" href="BeatingHeart.html" aria-labelledby="heart-title">
+            <figure>
+              <img class="project-image" src="BeatingHeart.jpg" alt="Stained glass: Beating Heart" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder" style="display:none">Heart picture not found — upload BeatingHeart.jpg</div>
+            </figure>
+            <figcaption>
+              <div>
+                <div id="heart-title" class="title">Beating Heart</div>
+                <div class="subtitle">This piece was created as a gift.  It utilizes clear and colored glass with opalescent tones. </div>
+              </div>
+            </figcaption>
+          </a>
         </article>
 
       </section>
